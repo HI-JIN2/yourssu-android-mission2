@@ -12,8 +12,7 @@
 5. 명시되어 있지 않은 것은 자유롭게 구현해주세요.
 
 ## 작업 분해
--[] UI
--[] intent로 정보 넘기기
--[]
--[] validation 30초 정규성 검증 및 editText stoke
--[] MVVM
+- [ ] UI  
+- [ ] intent로 정보 넘기기  
+- [ ] validation 30초 정규성 검증 및 editText stoke  
+- [ ] MVVM  
