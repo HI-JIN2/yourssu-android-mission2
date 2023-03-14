@@ -7,13 +7,24 @@
     tools:context=".ResultActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_result_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
+        android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_baseline_close_24"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_result_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_result_title" />
 
     <TextView
         android:id="@+id/textView4"
@@ -24,7 +35,7 @@
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tv_title_email"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_result_title" />
 
     <TextView
         android:id="@+id/tv_title_email"
