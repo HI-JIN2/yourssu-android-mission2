@@ -28,11 +28,6 @@ class EmailActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 email = binding.etEmail.text.toString()
 
-                if (email.isNotEmpty())
-                    binding.etEmail.setBackgroundResource(R.drawable.shape_edittext)
-                else
-                    binding.etEmail.setBackgroundResource(R.drawable.shape_edittext_not)
-
                 binding.btnEmailNext.isEnabled = email.isNotEmpty() //있다면 true 없으면 false
             }
 
