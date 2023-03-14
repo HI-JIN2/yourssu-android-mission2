@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import com.example.yourssu_android_mission2.databinding.ActivityEmailBinding
 import com.example.yourssu_android_mission2.databinding.ActivityPasswordBinding
 import java.util.regex.Pattern
 
@@ -22,12 +21,17 @@ class PasswordActivity : AppCompatActivity() {
 
         email = intent.getStringExtra("email").toString()
 
-        val pwPattern =  "^(?=.*[A-Za-z])(?=.*[$@$!%*#?&.])[A-Za-z$@$!%*#?&.]{8,20}$"
+        if (pw.isNotEmpty())//비었으면 not stoke
+            binding.etPw.setBackgroundResource(R.drawable.shape_edittext)
+        else //채웠으면 stoke
+            binding.etPw.setBackgroundResource(R.drawable.shape_edittext_okay)
+
+        val pwPattern =  "^(?=.*[A-Za-z])(?=.*\\d)[!-~₩]{8,100}$"
         val pattern2 = Pattern.compile(pwPattern) // 패턴 컴파일
         val matcher2 = pattern2.matcher(pw)
 
-        if (!matcher2.find()) {
-            binding.etPw.setTextColor(Color.parseColor("#FF0000"))
+        if (!matcher2.find()) {//규칙에 안맞으면 빨간 stoke
+            binding.etPw.setBackgroundResource(R.drawable.shape_edittext_not)
             binding.btnPwNext.isEnabled = false
         } else {
             binding.btnPwNext.isEnabled = true
@@ -55,6 +59,12 @@ class PasswordActivity : AppCompatActivity() {
 
         binding.ibnDelete.setOnClickListener(){
             binding.etPw.text.clear()
+        }
+
+        binding.ibnClose.setOnClickListener(){
+            val intent = Intent(this, EmailActivity::class.java)  // 인텐트를 생성해줌,
+            startActivity(intent)  // 화면 전환을 시켜줌
+            finish()
         }
 
         binding.btnPwNext.setOnClickListener() {

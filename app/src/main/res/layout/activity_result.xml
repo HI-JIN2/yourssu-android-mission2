@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:id="@+id/ibn_result_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
@@ -58,6 +59,7 @@
         android:id="@+id/tv_title_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="password: "
         app:layout_constraintStart_toStartOf="@+id/tv_title_email"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_email" />
