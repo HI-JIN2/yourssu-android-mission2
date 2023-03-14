@@ -13,7 +13,8 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.tvEmail.text=intent.getStringExtra("email")
+        val email=intent.getStringExtra("email")
+        binding.tvEmail.text= "$email@soongsil.ac.kr"
         binding.tvPassword.text=intent.getStringExtra("pw")
 
         binding.ibnResultClose.setOnClickListener(){
