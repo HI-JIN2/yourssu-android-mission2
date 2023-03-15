@@ -19,3 +19,9 @@
 - [x] close
 - [ ] validation 30초 정규성 검증 및 editText stoke  
 - [ ] MVVM  
+
+
+## 패키지 구조
+- model
+- view
+- viewmodel
