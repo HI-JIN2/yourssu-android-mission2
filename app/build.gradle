@@ -10,6 +10,7 @@ android {
     buildFeatures {
         // 뷰 바인딩 활성화
         viewBinding true
+        dataBinding true
     }
 
     defaultConfig {
@@ -46,4 +47,9 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    def lifecycle_version = "2.1.0"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 }

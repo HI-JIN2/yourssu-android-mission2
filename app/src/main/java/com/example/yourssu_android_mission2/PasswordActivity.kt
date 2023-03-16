@@ -1,25 +1,32 @@
 package com.example.yourssu_android_mission2
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProviders
 import com.example.yourssu_android_mission2.databinding.ActivityPasswordBinding
 import java.util.regex.Pattern
 
 class PasswordActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityPasswordBinding
+    private val liveUser = MutableLiveData<User>()
+
     var pw: String = ""
     var email:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPasswordBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_password)
+        binding.lifecycleOwner=this
 
-        email = intent.getStringExtra("email").toString()
+        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
+        binding.viewModel = viewModel
+
+
+//        email = intent.getStringExtra("email").toString()
 
         if (pw.isNotEmpty())//비었으면 not stoke
             binding.etPw.setBackgroundResource(R.drawable.shape_edittext)
@@ -69,8 +76,8 @@ class PasswordActivity : AppCompatActivity() {
 
         binding.btnPwNext.setOnClickListener() {
             val intent = Intent(this, ResultActivity::class.java)  // 인텐트를 생성해줌,
-            intent.putExtra("pw", pw)
-            intent.putExtra("email", email)
+//            viewModel.setPassword(binding.etPw.text.toString())
+
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
         }

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.yourssu_android_mission2.UserViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
@@ -51,7 +59,7 @@
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="peter@soongsil.ac.kr"
+        android:text="@{String.valueOf(viewModel.userEmail)}"
         app:layout_constraintStart_toEndOf="@+id/tv_title_email"
         app:layout_constraintTop_toTopOf="@+id/tv_title_email" />
 
@@ -68,9 +76,10 @@
         android:id="@+id/tv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1assflkas!"
+        android:text="@{String.valueOf(viewModel.userPassword)}"
         app:layout_constraintStart_toEndOf="@+id/tv_title_password"
         app:layout_constraintTop_toTopOf="@+id/tv_title_password" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

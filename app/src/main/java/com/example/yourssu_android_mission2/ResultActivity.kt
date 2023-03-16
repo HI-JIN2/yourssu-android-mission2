@@ -3,6 +3,8 @@ package com.example.yourssu_android_mission2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import com.example.yourssu_android_mission2.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
@@ -10,12 +12,11 @@ class ResultActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityResultBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_result)
+        binding.lifecycleOwner=this
 
-        val email=intent.getStringExtra("email")
-        binding.tvEmail.text= "$email@soongsil.ac.kr"
-        binding.tvPassword.text=intent.getStringExtra("pw")
+        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
+        binding.viewModel = viewModel
 
         binding.ibnResultClose.setOnClickListener(){
             val intent = Intent(this, EmailActivity::class.java)  // 인텐트를 생성해줌,
