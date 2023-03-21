@@ -1,23 +1,37 @@
-package com.example.yourssu_android_mission2
+package com.example. yourssu_android_mission2
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class UserViewModel : ViewModel() {
-    var userEmail : MutableLiveData<String> = MutableLiveData()
-    var userPassword : MutableLiveData<String> = MutableLiveData()
+//    var userEmail : MutableLiveData<String> = MutableLiveData()
+//    var userPassword : MutableLiveData<String> = MutableLiveData()
+
+    var user : MutableLiveData<User> = MutableLiveData()
 
     init{
-        userEmail.value=""
-        userPassword.value=""
+        user.value?.email =""
+        user.value?.password =""
+
+//        userEmail.value=""
+//        userPassword.value=""
+    }
+    //(MySharedPreferences.getUserId(this).isBlank()
+    fun setEmail(inputEmail : String){
+        MySharedPreferences.setUserEmail(App.context(), inputEmail)
+        //user.value?.email = inputEmail
     }
 
-//    fun setEmail(e : String){
-//        userEmail.value=e
-//    }
-//
-//    fun setPassword(pw: String) {
-//        userPassword.value=pw
-//    }
+    fun setPassword(inputPassword: String) {
+        MySharedPreferences.setUserPw(App.context(), inputPassword)
+        //user.value?.password = inputPassword
+    }
+
+    fun getEmail(): String {
+        return MySharedPreferences.getUserId(App.context())
+    }
+
+    fun getPassword(): String {
+        return MySharedPreferences.getUserPw(App.context())
+    }
 }

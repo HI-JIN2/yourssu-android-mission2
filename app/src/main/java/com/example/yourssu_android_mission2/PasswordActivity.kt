@@ -76,7 +76,7 @@ class PasswordActivity : AppCompatActivity() {
 
         binding.btnPwNext.setOnClickListener() {
             val intent = Intent(this, ResultActivity::class.java)  // 인텐트를 생성해줌,
-//            viewModel.setPassword(binding.etPw.text.toString())
+            viewModel.setPassword(binding.etPw.text.toString())
 
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
