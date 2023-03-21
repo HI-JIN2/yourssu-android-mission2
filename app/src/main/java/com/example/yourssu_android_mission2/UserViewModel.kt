@@ -1,37 +1,42 @@
-package com.example. yourssu_android_mission2
+package com.example.yourssu_android_mission2
 
+import android.app.Application
+import androidx.databinding.ObservableField
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class UserViewModel : ViewModel() {
-//    var userEmail : MutableLiveData<String> = MutableLiveData()
-//    var userPassword : MutableLiveData<String> = MutableLiveData()
+class UserViewModel() {
+    var userEmail= ObservableField<String>("")
+    var userPassword = ObservableField<String>("")
 
-    var user : MutableLiveData<User> = MutableLiveData()
-
+    //var user : ObservableField<User> = MutableLiveData()
+/*
     init{
-        user.value?.email =""
-        user.value?.password =""
+        //user.value?.email =""
+        //user.value?.password =""
 
-//        userEmail.value=""
-//        userPassword.value=""
+        userEmail=""
+        userPassword.value=""
     }
     //(MySharedPreferences.getUserId(this).isBlank()
     fun setEmail(inputEmail : String){
-        MySharedPreferences.setUserEmail(App.context(), inputEmail)
-        //user.value?.email = inputEmail
+        //MySharedPreferences.setUserEmail(App.context(), inputEmail)
+        userEmail = inputEmail
     }
 
     fun setPassword(inputPassword: String) {
-        MySharedPreferences.setUserPw(App.context(), inputPassword)
-        //user.value?.password = inputPassword
+        //MySharedPreferences.setUserPw(App.context(), inputPassword)
+        userPassword = inputPassword
     }
 
-    fun getEmail(): String {
-        return MySharedPreferences.getUserId(App.context())
+    fun getEmail(): String? {
+        return userEmail
+        //MySharedPreferences.getUserId(App.context())
     }
 
-    fun getPassword(): String {
-        return MySharedPreferences.getUserPw(App.context())
-    }
+    fun getPassword(): String? {
+        return userPassword
+        //MySharedPreferences.getUserPw(App.context())
+    }*/
 }

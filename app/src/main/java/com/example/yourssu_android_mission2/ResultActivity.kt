@@ -15,10 +15,13 @@ class ResultActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_result)
         binding.lifecycleOwner=this
 
-        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
-        binding.viewModel = viewModel
-        binding.tvEmail.text=viewModel.getEmail()
-        binding.tvPassword.text=viewModel.getPassword()
+
+//        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
+        //       binding.viewModel = viewModel
+
+        binding.viewModel =UserViewModel()
+        //binding.tvEmail.text=viewModel.getEmail()
+        //binding.tvPassword.text=viewModel.getPassword()
 
         binding.ibnResultClose.setOnClickListener(){
             val intent = Intent(this, EmailActivity::class.java)  // 인텐트를 생성해줌,

@@ -22,10 +22,10 @@ class PasswordActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_password)
         binding.lifecycleOwner=this
 
-        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
-        binding.viewModel = viewModel
+//        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
+ //       binding.viewModel = viewModel
 
-
+        binding.viewModel =UserViewModel()
 //        email = intent.getStringExtra("email").toString()
 
         if (pw.isNotEmpty())//비었으면 not stoke
@@ -76,7 +76,7 @@ class PasswordActivity : AppCompatActivity() {
 
         binding.btnPwNext.setOnClickListener() {
             val intent = Intent(this, ResultActivity::class.java)  // 인텐트를 생성해줌,
-            viewModel.setPassword(binding.etPw.text.toString())
+            //viewModel.setPassword(binding.etPw.text.toString())
 
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()

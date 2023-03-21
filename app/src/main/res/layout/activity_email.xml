@@ -41,7 +41,7 @@
         android:layout_height="40dp"
         android:inputType="text"
         android:layout_margin="30dp"
-        android:text="@={viewModel.user.email}"
+        android:text="@={viewModel.userEmail}"
         android:padding="10dp"
         android:background="@drawable/shape_edittext"
         app:layout_constraintEnd_toEndOf="parent"
