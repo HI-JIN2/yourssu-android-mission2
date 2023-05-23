@@ -21,7 +21,7 @@ class EmailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_email)
-        binding.lifecycleOwner=this
+//        binding.lifecycleOwner=this
 
 //        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
         //       binding.viewModel = viewModel

@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class UserViewModel() {
-    var userEmail= ObservableField<String>("")
-    var userPassword = ObservableField<String>("")
+    var userEmail : ObservableField<String> = ObservableField()
+    var userPassword : ObservableField<String> = ObservableField()
 
     //var user : ObservableField<User> = MutableLiveData()
 /*
