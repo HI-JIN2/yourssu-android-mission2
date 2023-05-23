@@ -21,10 +21,12 @@ class EmailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_email)
-        binding.lifecycleOwner=this
+//        binding.lifecycleOwner=this
 
-        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
-        binding.viewModel = viewModel
+//        var viewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
+        //       binding.viewModel = viewModel
+
+        binding.viewModel =UserViewModel()
 
 
         //버튼 비활성화
@@ -47,13 +49,13 @@ class EmailActivity : AppCompatActivity() {
         })
 
         binding.btnEmailNext.setOnClickListener() {
-            val sharedPreferences = getSharedPreferences("sp1", MODE_PRIVATE)
-            val editor : SharedPreferences.Editor = sharedPreferences.edit()
-            editor.putString("email",email)
-            editor.commit()
+//            val sharedPreferences = getSharedPreferences("sp1", MODE_PRIVATE)
+//            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+//            editor.putString("email",email)
+//            editor.commit()
 
             val intent = Intent(this, PasswordActivity::class.java)  // 인텐트를 생성해줌,
-            viewModel.setEmail(binding.etEmail.text.toString())
+            //viewModel.setEmail(email)
             startActivity(intent)  // 화면 전환을 시켜줌
             finish()
         }

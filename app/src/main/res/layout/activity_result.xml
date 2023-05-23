@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.yourssu_android_mission2.UserViewModel" />
@@ -60,7 +59,7 @@
             android:id="@+id/tv_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(viewModel.user.email)}"
+            android:text="@{String.valueOf(viewModel.userEmail)}"
             app:layout_constraintStart_toEndOf="@+id/tv_title_email"
             app:layout_constraintTop_toTopOf="@+id/tv_title_email" />
 
@@ -77,7 +76,7 @@
             android:id="@+id/tv_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(viewModel.user.password)}"
+            android:text="@{String.valueOf(viewModel.userPassword)}"
             app:layout_constraintStart_toEndOf="@+id/tv_title_password"
             app:layout_constraintTop_toTopOf="@+id/tv_title_password" />
 
